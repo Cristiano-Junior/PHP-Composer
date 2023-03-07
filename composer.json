@@ -1,0 +1,21 @@
+{
+    "name": "cristiano-junior/buscador-cursos",
+    "description": "Projeto de busca de cursos no site da Alura",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "CristianoJunior\\BuscadorCursos\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Cristiano Junior",
+            "email": "cristianojunior120@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.5",
+        "symfony/dom-crawler": "^6.2.7",
+        "symfony/css-selector": "^6.2"
+    }
+}
