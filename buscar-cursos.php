@@ -3,23 +3,16 @@
 require 'vendor/autoload.php';
 
 use GuzzleHttp\Client;
+use CristianoJunior\BuscadorDeCursos\Buscador;
 use Symfony\Component\DomCrawler\Crawler;
 
-$client = new Client(['verify' => false]);
-
-$response = $client->request('GET', 'https://cursos.alura.com.br/category/programacao/php');
-
-$html = $response->getBody()->getContents();
-
-var_dump($html);
-
+$client = new Client(['verify' => false, 'base_uri' => 'https://www.alura.com.br/']);
 $crawler = new Crawler();
-$crawler->addHtmlContent($html);
-$cursos = $crawler->filter('li.card-list__item');
+
+$buscador = new Buscador($client, $crawler);
+$cursos = $buscador->buscar('/cursos-online-programacao/php');
 
 foreach($cursos as $curso)
 {
-    echo $curso->textContent . PHP_EOL;
+    echo $curso . PHP_EOL;
 }
-
-echo $response->getStatusCode();
