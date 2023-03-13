@@ -20,6 +20,23 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^10",
-        "squizlabs/php_codesniffer": "*"
+        "squizlabs/php_codesniffer": "*",
+        "phan/phan": "^5.4"
+    },
+    "scripts": {
+        "teste" : "phpunit src\\Buscador.php",
+        "cs" : "phpcs --standard=PSR12 src/",
+        "phan": "phan --allow-polyfill-parser",
+        "check": [
+            "@phan",
+            "@cs",
+            "@teste"
+        ]
+    },
+    "scripts-descriptions": {
+        "teste" : "Roda verificação com o PHPUnit",
+        "cs" : "Roda verificação de padrão PHPCs PSR12",
+        "phan" : "Roda verificação com o Phan",
+        "check" : "Roda verificação com todos os scripts"
     }
 }
