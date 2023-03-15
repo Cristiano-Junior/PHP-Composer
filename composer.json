@@ -42,5 +42,6 @@
         "phan" : "Roda verificação com o Phan",
         "check" : "Roda verificação com todos os scripts"
     },
-    "license": "GPL-3.0"
+    "license": "GPL-3.0",
+    "bin": "buscar-cursos.php"
 }
