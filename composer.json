@@ -31,6 +31,9 @@
             "@phan",
             "@cs",
             "@teste"
+        ],
+        "post-update-cmd": [
+            "@teste"
         ]
     },
     "scripts-descriptions": {
@@ -38,5 +41,6 @@
         "cs" : "Roda verificação de padrão PHPCs PSR12",
         "phan" : "Roda verificação com o Phan",
         "check" : "Roda verificação com todos os scripts"
-    }
+    },
+    "license": "GPL-3.0"
 }
